@@ -1,0 +1,28 @@
+{
+  "name": "my_tool",
+  "version": "1.0.0",
+  "description": "a template for developing node.js command-line tools",
+  "main": "index.js",
+  "bin": {
+    "my_tool": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "private": true,
+  "scripts": {
+    "watch": "npm run build -- -w",
+    "build": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "debug": "ndb dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "command-line tool"
+  ],
+  "author": "Dave Mosher",
+  "license": "MIT",
+  "devDependencies": {
+    "@vercel/ncc": "^0.31.1",
+    "ndb": "^1.1.5"
+  }
+}
